@@ -1,1 +1,4 @@
-
+{
+	"name": "wise-engineering/statsd-demo",
+	"description": "Demo of StatsD Library Usage"
+}
