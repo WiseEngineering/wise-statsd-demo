@@ -12,11 +12,15 @@
 
 <?php
 
+require statsd.phpe
+
 if( !empty($_REQUEST)) {
 	$username = ( !empty($_REQUEST["Name"]) ) ? $_REQUEST["Name"] : "Bot";
 }
 
 $agent = preg_match('/Android|iPhone|iPad|iPod/is', $_SERVER["HTTP_USER_AGENT"]);
+
+StatsD::increment('demo.pageload');
 
 ?>
 
