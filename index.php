@@ -12,7 +12,7 @@
 
 <?php
 
-require statsd.phpe
+require statsd.php;
 
 if( !empty($_REQUEST)) {
 	$username = ( !empty($_REQUEST["Name"]) ) ? $_REQUEST["Name"] : "Bot";
