@@ -26,7 +26,7 @@ StatsD::increment("demo.pageload." . (( $isMobile === true ) ? "mobile" : "deskt
 
 $end = time() + microtime();
 
-var_dump($end - $start);
+StatsD::gauge("demo.pageloadtime", $end - $start);
 
 ?>
 
