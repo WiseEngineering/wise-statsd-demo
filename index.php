@@ -12,6 +12,8 @@
 
 <?php
 
+$start = time() + microtime();
+
 require "statsd.php";
 
 if( !empty($_REQUEST)) {
@@ -21,6 +23,10 @@ if( !empty($_REQUEST)) {
 $isMobile = (bool) preg_match('/Android|iPhone|iPad|iPod/is', $_SERVER["HTTP_USER_AGENT"]);
 
 StatsD::increment("demo.pageload." . (( $isMobile === true ) ? "mobile" : "desktop"));
+
+$end = time() + microtime();
+
+var_dump($end - $start);
 
 ?>
 
