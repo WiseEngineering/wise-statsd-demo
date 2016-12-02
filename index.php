@@ -18,7 +18,7 @@ if( !empty($_REQUEST)) {
 
 $agent = $_SERVER["HTTP_USER_AGENT"];
 
-echo (bool) preg_match('/Android|iPhone|iPad|iPod/is', $agent);
+var_dump(preg_match('/Android|iPhone|iPad|iPod/is', $agent));
 
 ?>
 
