@@ -16,9 +16,7 @@ if( !empty($_REQUEST)) {
 	$username = ( !empty($_REQUEST["Name"]) ) ? $_REQUEST["Name"] : "Bot";
 }
 
-$agent = $_SERVER["HTTP_USER_AGENT"];
-
-var_dump(preg_match('/Android|iPhone|iPad|iPod/is', $agent));
+$agent = preg_match('/Android|iPhone|iPad|iPod/is', $_SERVER["HTTP_USER_AGENT"]);
 
 ?>
 
