@@ -13,8 +13,10 @@
 <?php
 
 if( !empty($_REQUEST)) {
-	var_dump($_REQUEST);
+	$username = ( !empty($_REQUEST["Name"]) ) ? $_REQUEST["Name"] : "Bot";
 }
+
+var_dump($_SERVER);
 
 ?>
 
