@@ -20,6 +20,8 @@ if( !empty($_REQUEST)) {
 
 $isMobile = (bool) preg_match('/Android|iPhone|iPad|iPod/is', $_SERVER["HTTP_USER_AGENT"]);
 
+StatsD::increment("demo.pageview." . (($isMobile === true) ? "mobile" : "desktop"));
+
 ?>
 
 </body>
