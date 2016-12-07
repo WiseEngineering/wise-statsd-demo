@@ -12,15 +12,24 @@
 
 <?php
 
+$start = time() + microtime();
+
 require "statsd.php";
 
 if( !empty($_REQUEST)) {
 	$username = ( !empty($_REQUEST["Name"]) ) ? $_REQUEST["Name"] : "Bot";
+	
+	StatsD::increment("demo.login");
 }
 
 $isMobile = (bool) preg_match('/Android|iPhone|iPad|iPod/is', $_SERVER["HTTP_USER_AGENT"]);
 
 StatsD::increment("demo.pageview." . (($isMobile === true) ? "mobile" : "desktop"));
+
+
+$end = time() + microtime();
+
+StatsD::gauge("demo.pageloadtime", ($end - $start));
 
 ?>
 
